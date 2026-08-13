@@ -1,0 +1,215 @@
+{
+  "hidden_strengths": [
+    {
+      "theme_id": "T005",
+      "theme": "Life & Ruins",
+      "sentiment": "positive",
+      "mention_count": 51,
+      "marketing_claim_ids": [],
+      "example_review_ids": [
+        "232393727",
+        "232477775",
+        "232191164",
+        "232405761",
+        "232206937"
+      ],
+      "description": "No marketing claim shares matching keywords with this theme (0 of 33 claims), despite 51 player mentions."
+    },
+    {
+      "theme_id": "T011",
+      "theme": "Enjoy & Perfect & Learn",
+      "sentiment": "positive",
+      "mention_count": 34,
+      "marketing_claim_ids": [],
+      "example_review_ids": [
+        "232393727",
+        "232189248",
+        "232281378",
+        "232524999",
+        "232645899"
+      ],
+      "description": "No marketing claim shares matching keywords with this theme (0 of 33 claims), despite 34 player mentions."
+    },
+    {
+      "theme_id": "T004",
+      "theme": "Friends & Solo & Wipe",
+      "sentiment": "positive",
+      "mention_count": 59,
+      "marketing_claim_ids": [
+        "M032"
+      ],
+      "example_review_ids": [
+        "232581549",
+        "232208163",
+        "232388889",
+        "232189248",
+        "232608087"
+      ],
+      "description": "Only 1 of 33 marketing claim(s) (M032) share matching keywords with this theme, despite 59 player mentions."
+    },
+    {
+      "theme_id": "T006",
+      "theme": "Raided & Offline & Entire",
+      "sentiment": "positive",
+      "mention_count": 45,
+      "marketing_claim_ids": [
+        "M011",
+        "M033"
+      ],
+      "example_review_ids": [
+        "232208163",
+        "232633601",
+        "232477775",
+        "232489305",
+        "232600192"
+      ],
+      "description": "Only 2 of 33 marketing claim(s) (M011, M033) share matching keywords with this theme, despite 45 player mentions."
+    },
+    {
+      "theme_id": "T009",
+      "theme": "Survival & Fresh & Craft",
+      "sentiment": "positive",
+      "mention_count": 35,
+      "marketing_claim_ids": [
+        "M008",
+        "M031"
+      ],
+      "example_review_ids": [
+        "232603811",
+        "232645899",
+        "232208163",
+        "232633601",
+        "232464174"
+      ],
+      "description": "Only 2 of 33 marketing claim(s) (M008, M031) share matching keywords with this theme, despite 35 player mentions."
+    }
+  ],
+  "marketing_disconnects": [
+    {
+      "claim_id": "M022",
+      "claim_text": "And much more to come throughout the year, including an update to the player’s character model, an apartment complex monument, more animals, and upgrades to the caves and tunnels !",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M010",
+      "claim_text": "Transportation: horses, modular cars, hot air balloons, helicopters, bikes, trains, boats, and more",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M021",
+      "claim_text": "2026 New addition: Modular boats, the deep sea, tropical islands, floating cities, and more!",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M006",
+      "claim_text": "Keep an eye out for regular seasonal events, as there’s always something interesting or dangerous (or both) happening on the island.",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M025",
+      "claim_text": "Explore the island and its abandoned settlements, mysterious monuments, and the factions that occupy them.",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M018",
+      "claim_text": "Massive recent graphics upgrade and environment overhaul",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M019",
+      "claim_text": "Primitive game mode, siege weapons, and vehicles added",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M020",
+      "claim_text": "New Jungle biome with more wild animals, missions, and monuments",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M016",
+      "claim_text": "Large overground and underground train networks",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M013",
+      "claim_text": "Advanced underwater areas to discover",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M015",
+      "claim_text": "New monuments, terrain, and areas to explore",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M017",
+      "claim_text": "Musical instruments and the ability to perform to players",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M003",
+      "claim_text": "Do whatever it takes to last another night.",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M012",
+      "claim_text": "New factions, enemies, and wildlife",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M001",
+      "claim_text": "The only aim in Rust is to survive.",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M026",
+      "claim_text": "But, above all, watch out for other survivors…",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M029",
+      "claim_text": "Whatever it takes to get ahead.",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    },
+    {
+      "claim_id": "M030",
+      "claim_text": "There are no rules in Rust but the ones you make for yourself.",
+      "matched_theme_ids": [],
+      "player_mention_count": 0,
+      "description": "No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews)."
+    }
+  ]
+}
