@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rust - Brand Perception Gap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --ink: #1a1d23;
+  --muted: #5a6270;
+  --bg: #ffffff;
+  --panel: #f6f7f9;
+  --border: #e1e4e9;
+  --accent: #2f5fdb;
+  --accent-soft: #eaf0ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.page { max-width: 1320px; margin: 0 auto; padding: 40px 48px 100px; }
+header.hero {
+  text-align: center;
+  padding: 36px 24px 40px;
+  border-bottom: 4px solid var(--accent);
+  margin-bottom: 56px;
+}
+header.hero h1 {
+  font-size: 40px;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.hero-sub-title { color: var(--accent); font-size: 28px; letter-spacing: 0.04em; }
+header.hero .subtitle { font-size: 19px; color: var(--muted); margin: 0 0 32px; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.stat-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+  padding: 26px 18px; text-align: center;
+}
+.stat-number { font-size: 44px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 16px; color: var(--muted); }
+section.block { margin-bottom: 64px; }
+section.block h2 {
+  font-size: 28px; margin: 0 0 8px; padding-bottom: 10px; border-bottom: 3px solid var(--border);
+}
+.section-hint { color: var(--muted); font-size: 16px; margin: 0 0 24px; }
+.rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 24px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 26px; }
+.rec-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.priority-pill {
+  background: var(--ink); color: #fff; font-weight: 700; font-size: 14px;
+  padding: 4px 12px; border-radius: 999px;
+}
+.badge { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; }
+.rec-card h3 { font-size: 22px; margin: 0 0 16px; }
+.rec-row { margin-bottom: 14px; }
+.rec-label { display: block; font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+.rec-row p, .align-desc { margin: 0; font-size: 16px; }
+.rec-action-box { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; margin: 16px 0; }
+.rec-action-text { font-weight: 600; margin: 4px 0 0; }
+.copy-direction { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; margin-bottom: 14px; font-style: italic; color: var(--ink); }
+.copy-direction em { font-style: normal; color: var(--muted); font-weight: 400; }
+.evidence-count { color: var(--muted); font-size: 14px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 22px; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.card-header h3 { font-size: 20px; margin: 0; }
+.mention-count { font-size: 15px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+.card-note { color: var(--muted); font-size: 16px; margin: 0; }
+.mini-quote { margin: 12px 0 0; padding: 10px 14px; background: var(--bg); border-left: 4px solid var(--accent); font-style: italic; font-size: 15px; border-radius: 4px; }
+.align-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.align-column { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+.align-column h3 { margin: 0 0 6px; font-size: 19px; }
+.align-desc { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.align-list { list-style: none; margin: 0; padding: 0; }
+.align-list li { padding: 10px 0; border-top: 1px solid var(--border); font-size: 15px; }
+.align-list li:first-child { border-top: none; }
+.align-meta { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.compare-table th, .compare-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.compare-table th { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+.concept-cell { font-weight: 600; }
+.phrase-chip { display: inline-block; padding: 3px 12px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+.marketing-chip { background: var(--accent-soft); color: var(--accent); }
+.player-chip { background: #eafaf1; color: #1e7e4a; }
+.evidence-subhead { font-size: 19px; margin: 28px 0 14px; }
+.evidence-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 12px; }
+.evidence-card blockquote { margin: 0 0 10px; font-size: 15px; }
+.claim-id { display: inline-block; font-size: 13px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 2px 10px; border-radius: 6px; margin-bottom: 8px; }
+.quote-meta { color: var(--muted); font-size: 13px; }
+.empty-note { color: var(--muted); font-style: italic; }
+footer.page-footer { text-align: center; color: var(--muted); font-size: 15px; margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); }
+@media (max-width: 900px) {
+  .summary-grid, .align-grid { grid-template-columns: 1fr; }
+  body { font-size: 16px; }
+  header.hero h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  
+    <header class="hero">
+      <h1>Rust<br><span class="hero-sub-title">BRAND PERCEPTION GAP</span></h1>
+      <p class="subtitle">What customers experience vs. how the brand is positioned</p>
+      <div class="summary-grid">
+        <div class="stat-card">
+          <div class="stat-number">1,000</div>
+          <div class="stat-label">Reviews Analyzed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">33</div>
+          <div class="stat-label">Marketing Claims Analyzed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Customer Perceptions Identified</div>
+        </div>
+      </div>
+    </header>
+    
+
+  <section class="block">
+    <h2>What Marketing Should Do Next</h2>
+    <p class="section-hint">Top prioritized recommendations, based on real customer evidence.</p>
+    <div class="rec-grid">
+        <div class="card rec-card">
+          <div class="rec-top">
+            <span class="priority-pill">Priority 1</span>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">ADD</span>
+          </div>
+          <h3>Put Friendship and Alliances at the Center of Positioning</h3>
+          <div class="rec-row"><span class="rec-label">What customers are telling us</span>
+            <p>Players repeatedly describe playing with friends and forming alliances as the most meaningful part of the experience, often citing it as what makes the grind worthwhile.</p></div>
+          <div class="rec-row"><span class="rec-label">What current marketing communicates</span>
+            <p>Cooperation is mentioned only once, in passing, as part of a single feature-list claim about building a settlement together.</p></div>
+          <div class="rec-row"><span class="rec-label">The gap</span>
+            <p>One of the most emotionally resonant, frequently volunteered positives in reviews is almost absent from the game&#x27;s core positioning.</p></div>
+          <div class="rec-action-box">
+            <span class="rec-label">Recommended action</span>
+            <p class="rec-action-text">ADD friendship, alliances, and shared player stories as a stronger part of Rust&#x27;s core positioning, not just a footnote in a feature list.</p>
+          </div>
+          <div class="copy-direction">
+            <span class="rec-label">Suggested messaging direction <em>(not final copy)</em></span>
+            <p>&ldquo;Survive together, form alliances, and create stories that last beyond the wipe.&rdquo;</p>
+          </div>
+          <div class="evidence-count">Backed by 3 piece(s) of real evidence</div>
+        </div>
+        
+        <div class="card rec-card">
+          <div class="rec-top">
+            <span class="priority-pill">Priority 2</span>
+            <span class="badge" style="background:#f5eefc;color:#7a3fc4">REFRAME</span>
+          </div>
+          <h3>Turn Offline Raiding Into a Named Feature, Not a Footnote</h3>
+          <div class="rec-row"><span class="rec-label">What customers are telling us</span>
+            <p>Losing a base to raiders while offline is one of the most vividly described, emotionally intense moments in reviews -- both a source of frustration and a badge of honor.</p></div>
+          <div class="rec-row"><span class="rec-label">What current marketing communicates</span>
+            <p>Raiding is mentioned only as a two-word feature label, &#x27;Base Building and Raiding,&#x27; with no acknowledgment of the offline-vulnerability tension that makes it memorable.</p></div>
+          <div class="rec-row"><span class="rec-label">The gap</span>
+            <p>The specific, high-stakes drama of offline raiding, which players describe in vivid detail, isn&#x27;t reflected in how the feature is marketed.</p></div>
+          <div class="rec-action-box">
+            <span class="rec-label">Recommended action</span>
+            <p class="rec-action-text">REFRAME the &#x27;Raiding&#x27; feature claim to explicitly name the offline-vulnerability stakes, since that&#x27;s the part players actually talk about.</p>
+          </div>
+          <div class="copy-direction">
+            <span class="rec-label">Suggested messaging direction <em>(not final copy)</em></span>
+            <p>&ldquo;You can log off. Your base can&#x27;t.&rdquo;</p>
+          </div>
+          <div class="evidence-count">Backed by 3 piece(s) of real evidence</div>
+        </div>
+        
+        <div class="card rec-card">
+          <div class="rec-top">
+            <span class="priority-pill">Priority 3</span>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">ADD</span>
+          </div>
+          <h3>Lead With Crafting Depth and the Fresh-Wipe Feeling</h3>
+          <div class="rec-row"><span class="rec-label">What customers are telling us</span>
+            <p>Players consistently praise the depth of the crafting and building systems and the excitement of a fresh start after each wipe.</p></div>
+          <div class="rec-row"><span class="rec-label">What current marketing communicates</span>
+            <p>Crafting and building are described only as a plain feature list (tools, armour, weapons; electrical, farming, and automation systems) without conveying the satisfaction players report.</p></div>
+          <div class="rec-row"><span class="rec-label">The gap</span>
+            <p>A strongly and consistently praised feature is presented as a spec sheet rather than an emotional selling point.</p></div>
+          <div class="rec-action-box">
+            <span class="rec-label">Recommended action</span>
+            <p class="rec-action-text">ADD language that conveys the satisfaction and sense of possibility players describe, not just a list of what can be crafted.</p>
+          </div>
+          <div class="copy-direction">
+            <span class="rec-label">Suggested messaging direction <em>(not final copy)</em></span>
+            <p>&ldquo;Every wipe is a blank page. What you build on it is up to you.&rdquo;</p>
+          </div>
+          <div class="evidence-count">Backed by 4 piece(s) of real evidence</div>
+        </div>
+        
+        <div class="card rec-card">
+          <div class="rec-top">
+            <span class="priority-pill">Priority 4</span>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">ADD</span>
+          </div>
+          <h3>Address Anti-Cheat and Ban Fairness Head-On</h3>
+          <div class="rec-row"><span class="rec-label">What customers are telling us</span>
+            <p>A recurring, emotionally charged complaint is unfair or unexplained permanent bans, alongside frustration that cheaters remain widespread.</p></div>
+          <div class="rec-row"><span class="rec-label">What current marketing communicates</span>
+            <p>Marketing never mentions anti-cheat, moderation, or fair play at all.</p></div>
+          <div class="rec-row"><span class="rec-label">The gap</span>
+            <p>A significant trust concern for both new and existing players goes completely unaddressed in current messaging.</p></div>
+          <div class="rec-action-box">
+            <span class="rec-label">Recommended action</span>
+            <p class="rec-action-text">ADD clear, visible communication about how anti-cheat enforcement and the ban appeals process work.</p>
+          </div>
+          <div class="copy-direction">
+            <span class="rec-label">Suggested messaging direction <em>(not final copy)</em></span>
+            <p>&ldquo;Fair play, enforced -- and a real appeals process when something goes wrong.&rdquo;</p>
+          </div>
+          <div class="evidence-count">Backed by 3 piece(s) of real evidence</div>
+        </div>
+        
+        <div class="card rec-card">
+          <div class="rec-top">
+            <span class="priority-pill">Priority 5</span>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">ADD</span>
+          </div>
+          <h3>Set Expectations About the Learning Curve Before Purchase</h3>
+          <div class="rec-row"><span class="rec-label">What customers are telling us</span>
+            <p>New players often feel blindsided by the steep learning curve and slow start, sometimes leading to early refund attempts, while players who push through describe strong long-term enjoyment.</p></div>
+          <div class="rec-row"><span class="rec-label">What current marketing communicates</span>
+            <p>Marketing describes the harsh starting scenario (naked, armed with a rock) but doesn&#x27;t warn players that overcoming the learning curve itself takes real time.</p></div>
+          <div class="rec-row"><span class="rec-label">The gap</span>
+            <p>There&#x27;s a mismatch between the fast, exciting tone of current marketing and the slower, harder onboarding reality new players actually experience.</p></div>
+          <div class="rec-action-box">
+            <span class="rec-label">Recommended action</span>
+            <p class="rec-action-text">ADD upfront, honest framing that the first few hours are intentionally hard, so new players arrive with the right expectations instead of bouncing off early.</p>
+          </div>
+          <div class="copy-direction">
+            <span class="rec-label">Suggested messaging direction <em>(not final copy)</em></span>
+            <p>&ldquo;Rust rewards patience. The first few hours are the hardest -- and worth pushing through.&rdquo;</p>
+          </div>
+          <div class="evidence-count">Backed by 3 piece(s) of real evidence</div>
+        </div>
+        </div>
+  </section>
+
+  <section class="block">
+    <h2>How Customers See The Brand</h2>
+    <p class="section-hint">Human-readable customer perceptions, not machine-generated topic labels.</p>
+    <div class="card-grid">
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Building and defending a base is the core activity players invest the most time in, and losing it feels like a major, memorable setback.</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a">Aligned</span>
+          </div>
+          <div class="mention-count">118 customer mentions</div>
+          <p class="card-note">Reviews repeatedly describe pouring many hours into farming materials and building a base, only for it to be destroyed quickly by other players.</p>
+          <blockquote class="mini-quote">&ldquo;I shouldn&#x27;t have to spend 10 hours to build a base, just for it to be torn down in 15 seconds by no-lifes who have rocket launchers 4 hours after wipe, when I don&#x27;t even have enough cloth to make clothes or low grade fuel to make a furnace.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>The community&#x27;s reputation for toxicity is a major, divisive talking point -- some players are put off by it, while others feel it&#x27;s exaggerated once you find the right people.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">112 customer mentions</div>
+          <p class="card-note">Reviews are split between describing the community as one of the most toxic on Steam and pushing back that the reputation is overstated.</p>
+          <blockquote class="mini-quote">&ldquo;One of the most toxic games on the internet, most toxic I&#x27;ve ever played.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>The chaotic, resource-scarce opening -- spawning with nothing and scrambling to survive -- is a memorable, frequently described experience.</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a">Aligned</span>
+          </div>
+          <div class="mention-count">60 customer mentions</div>
+          <p class="card-note">Players describe spawning on the beach with nothing, dying, and respawning repeatedly while trying to get established.</p>
+          <blockquote class="mini-quote">&ldquo;Spawn on the beach.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Playing with friends and forming alliances creates the most meaningful, memorable experiences -- camaraderie is often described as what makes the grind worth it.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">59 customer mentions</div>
+          <p class="card-note">Players describe the friendships and shared memories made while playing as the emotional core of the game, whether teaming up or going solo against clans.</p>
+          <blockquote class="mini-quote">&ldquo;It can evoke every emotion you can feel, both mentally and physically, but the memories I’ve made playing it with friends—that alone makes everything worth it.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Players frequently describe the game as consuming their life or being genuinely addictive, often as backhanded praise for how compelling it is.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">51 customer mentions</div>
+          <p class="card-note">Multiple reviews use hyperbolic language about the game &#x27;ruining their life&#x27; while still rating it highly and recommending it.</p>
+          <blockquote class="mini-quote">&ldquo;This game is so bad it&#x27;s fun and ruined my life 10/10 would rec :)&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Losing a base to raiders while offline is a deeply frustrating, high-stakes moment that players describe vividly, and it drives much of the game&#x27;s emotional intensity.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">45 customer mentions</div>
+          <p class="card-note">Reviews describe returning to find a base destroyed while they were away, often naming the specific player responsible.</p>
+          <blockquote class="mini-quote">&ldquo;There’s nothing better than spending hours making a base just for someone to blow it up while you’re offline.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>A vocal group of players report frustration with anti-cheat bans they feel were unfair or unexplained, along with unresponsive support from the developer.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">36 customer mentions</div>
+          <p class="card-note">Reviews describe permanent bans -- including one for what the player describes as a joke -- with no clear appeals process.</p>
+          <blockquote class="mini-quote">&ldquo;Got permanently EAC banned out of nowhere.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>New players frequently feel blindsided by the steep learning curve and slow onboarding, leading some to regret the purchase or attempt a refund before they get past the first few hours.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">35 customer mentions</div>
+          <p class="card-note">Reviews describe expecting something like other survival games, then feeling misled by how long it takes to get established, sometimes past Steam&#x27;s refund window.</p>
+          <blockquote class="mini-quote">&ldquo;at the time of purchase I thought it was like ARK and didn&#x27;t manage to refund this crap cause I thought I could change my character later when I am less busy, so ♥♥♥♥ this with all my heart.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>The crafting and building systems feel deep and satisfying, and each wipe delivers a genuinely fresh start that keeps players coming back.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">35 customer mentions</div>
+          <p class="card-note">Players describe the crafting system as deep and the building mechanics as satisfying, with each wipe offering a fresh, chaotic start.</p>
+          <blockquote class="mini-quote">&ldquo;Rust is a brutally unforgiving survival game that tests your patience, strategy, and social skills like no other.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Long loading screens and periodic crashes are a recurring frustration that colors players&#x27; first impressions before they even get into the game.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">34 customer mentions</div>
+          <p class="card-note">Reviews describe long waits just to load into a server, which shapes their first experience of the game.</p>
+          <blockquote class="mini-quote">&ldquo;Finally load in.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Despite a steep learning curve, players who push through often describe deep enjoyment and a sense of mastery once the game &#x27;clicks.&#x27;</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">34 customer mentions</div>
+          <p class="card-note">Reviews describe the crafting and building systems as satisfying once understood, and returning players describe the relearning process as refreshing rather than frustrating.</p>
+          <blockquote class="mini-quote">&ldquo;The crafting system is deep, the building mechanics are satisfying, and every wipe brings a fresh, chaotic start full of possibility.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card perception-card">
+          <div class="card-header">
+            <h3>Players value the frequent content updates but are frustrated by a persistent cheating problem they feel isn&#x27;t being addressed quickly enough.</h3>
+            <span class="badge" style="background:#eaf0ff;color:#2f5fdb">Underrepresented Opportunity</span>
+          </div>
+          <div class="mention-count">31 customer mentions</div>
+          <p class="card-note">Reviews praise the pace of updates while separately describing high volumes of cheaters and wanting more active in-game moderation.</p>
+          <blockquote class="mini-quote">&ldquo;Honestly its crazy how many high hour cheaters there are, Game really needs in game admins gaming on EVERY server just insane amount of cheating, its no wonder so many legit players give in and start cheating.&rdquo;</blockquote>
+        </div>
+        </div>
+  </section>
+
+  <section class="block">
+    <h2>Brand Alignment</h2>
+    <p class="section-hint">Where marketing matches, underplays, or overemphasizes what customers actually value.</p>
+    <div class="align-grid">
+        <div class="align-column" style="border-top: 6px solid #1e7e4a">
+          <h3 style="color:#1e7e4a">Aligned</h3>
+          <p class="align-desc">Customer perception matches current positioning.</p>
+          <ul class="align-list"><li><strong>Building and defending a base is the core activity players invest the most time in, and losing it feels like a major, memorable setback.</strong><span class="align-meta">Marketing already features base building and raiding prominently as a named feature.</span></li><li><strong>The chaotic, resource-scarce opening -- spawning with nothing and scrambling to survive -- is a memorable, frequently described experience.</strong><span class="align-meta">Marketing already opens with this exact beat: waking up naked and armed only with a rock and a torch.</span></li></ul>
+        </div>
+        
+        <div class="align-column" style="border-top: 6px solid #2f5fdb">
+          <h3 style="color:#2f5fdb">Underrepresented Opportunity</h3>
+          <p class="align-desc">Customers strongly value this, but marketing underplays it.</p>
+          <ul class="align-list"><li><strong>The community&#x27;s reputation for toxicity is a major, divisive talking point -- some players are put off by it, while others feel it&#x27;s exaggerated once you find the right people.</strong><span class="align-meta">Marketing does not address community tone or player behavior at all.</span></li><li><strong>Playing with friends and forming alliances creates the most meaningful, memorable experiences -- camaraderie is often described as what makes the grind worth it.</strong><span class="align-meta">Cooperation is mentioned only once, in passing, inside a single feature-list claim about building a settlement together.</span></li><li><strong>Players frequently describe the game as consuming their life or being genuinely addictive, often as backhanded praise for how compelling it is.</strong><span class="align-meta">Marketing does not reference the game&#x27;s addictive, hard-to-put-down quality at all.</span></li><li><strong>Losing a base to raiders while offline is a deeply frustrating, high-stakes moment that players describe vividly, and it drives much of the game&#x27;s emotional intensity.</strong><span class="align-meta">Raiding is only named as a two-word feature label without acknowledging the offline-vulnerability tension that makes it so memorable.</span></li><li><strong>A vocal group of players report frustration with anti-cheat bans they feel were unfair or unexplained, along with unresponsive support from the developer.</strong><span class="align-meta">Marketing does not mention anti-cheat, moderation, or fair play at all.</span></li><li><strong>New players frequently feel blindsided by the steep learning curve and slow onboarding, leading some to regret the purchase or attempt a refund before they get past the first few hours.</strong><span class="align-meta">Marketing does not set expectations about the learning curve or the time investment required before the game &#x27;clicks.&#x27;</span></li><li><strong>The crafting and building systems feel deep and satisfying, and each wipe delivers a genuinely fresh start that keeps players coming back.</strong><span class="align-meta">Crafting is only loosely referenced through generic feature-list claims about tools, armour, and community-made maps.</span></li><li><strong>Long loading screens and periodic crashes are a recurring frustration that colors players&#x27; first impressions before they even get into the game.</strong><span class="align-meta">Marketing does not mention loading times, performance, or technical requirements.</span></li><li><strong>Despite a steep learning curve, players who push through often describe deep enjoyment and a sense of mastery once the game &#x27;clicks.&#x27;</strong><span class="align-meta">Marketing does not acknowledge the learning curve or frame mastering it as part of the reward.</span></li><li><strong>Players value the frequent content updates but are frustrated by a persistent cheating problem they feel isn&#x27;t being addressed quickly enough.</strong><span class="align-meta">Marketing highlights frequent content updates but never mentions anti-cheat or fair play.</span></li></ul>
+        </div>
+        
+        <div class="align-column" style="border-top: 6px solid #8a5a00">
+          <h3 style="color:#8a5a00">Overemphasized in Marketing</h3>
+          <p class="align-desc">Marketing strongly emphasizes this; customers rarely discuss it.</p>
+          <ul class="align-list"><li class="empty-note">None identified.</li></ul>
+        </div>
+        </div>
+  </section>
+
+  <section class="block">
+    <h2>Speak Like Your Customers</h2>
+    <p class="section-hint">Same idea, different words -- marketing's language vs. customers' own words.</p>
+    
+    <table class="compare-table">
+      <thead><tr><th>Concept</th><th>Marketing Says</th><th>Customers Say</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="concept-cell">Weapons &amp; combat gear</td>
+          <td><span class="phrase-chip marketing-chip">weapons</span></td>
+          <td><span class="phrase-chip player-chip">gun</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Survival</td>
+          <td><span class="phrase-chip marketing-chip">survivors</span></td>
+          <td><span class="phrase-chip player-chip">survival</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Player groups &amp; alliances</td>
+          <td><span class="phrase-chip marketing-chip">alliances</span></td>
+          <td><span class="phrase-chip player-chip">clan</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Player-built home/structure</td>
+          <td><span class="phrase-chip marketing-chip">bases</span></td>
+          <td><span class="phrase-chip player-chip">base</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Resource-gathering &amp; crafting depth</td>
+          <td><span class="phrase-chip marketing-chip">Complex</span></td>
+          <td><span class="phrase-chip player-chip">grind</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Cooperation</td>
+          <td><span class="phrase-chip marketing-chip">Cooperate</span></td>
+          <td><span class="phrase-chip player-chip">together</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Exploration</td>
+          <td><span class="phrase-chip marketing-chip">Explore</span></td>
+          <td><span class="phrase-chip player-chip">discovered</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Difficulty &amp; danger</td>
+          <td><span class="phrase-chip marketing-chip">dangerous</span></td>
+          <td><span class="phrase-chip player-chip">unforgiving</span></td>
+        </tr>
+        </tbody>
+    </table>
+    
+  </section>
+
+  <section class="block">
+    <h2>Evidence</h2>
+    
+    <h3 class="evidence-subhead">Real Customer Quotes</h3>
+    <div class="evidence-grid"><div class="card evidence-card"><blockquote>&ldquo;I shouldn&#x27;t have to spend 10 hours to build a base, just for it to be torn down in 15 seconds by no-lifes who have rocket launchers 4 hours after wipe, when I don&#x27;t even have enough cloth to make clothes or low grade fuel to make a furnace.&rdquo;</blockquote><div class="quote-meta">Review 232388889</div></div><div class="card evidence-card"><blockquote>&ldquo;You spend 6 hours farming wood, stone, sulfur, and whatever other garbage the forest demands from you, build a beautiful little base, organize your boxes, get a few guns, and finally think, “Wow, I’m actually doing pretty well.”&rdquo;</blockquote><div class="quote-meta">Review 232633601</div></div><div class="card evidence-card"><blockquote>&ldquo;One of the most toxic games on the internet, most toxic I&#x27;ve ever played.&rdquo;</blockquote><div class="quote-meta">Review 232388889</div></div><div class="card evidence-card"><blockquote>&ldquo;Game is super fun, contrary to the popular belief of this game&#x27;s community being &quot;toxic&quot; I actually found very fun people.&rdquo;</blockquote><div class="quote-meta">Review 232314214</div></div><div class="card evidence-card"><blockquote>&ldquo;Spawn on the beach.&rdquo;</blockquote><div class="quote-meta">Review 232208163</div></div><div class="card evidence-card"><blockquote>&ldquo;spawn in, get enslaved bye Russians and forced to work, die, spawn in, go inland, get killed by a bear, spawn on beach again, spend hours grinding to put up a base, get offline raided, repeat, i would not recommend this game unless you are mentally well.&rdquo;</blockquote><div class="quote-meta">Review 232233292</div></div><div class="card evidence-card"><blockquote>&ldquo;It can evoke every emotion you can feel, both mentally and physically, but the memories I’ve made playing it with friends—that alone makes everything worth it.&rdquo;</blockquote><div class="quote-meta">Review 232581549</div></div><div class="card evidence-card"><blockquote>&ldquo;Absolutely fantastic, for anyone, wether you&#x27;re trying to find new friends to play with, solo against massive clans, or even be one of those massive clans, rust is the game you want.&rdquo;</blockquote><div class="quote-meta">Review 232608087</div></div><div class="card evidence-card"><blockquote>&ldquo;This game is so bad it&#x27;s fun and ruined my life 10/10 would rec :)&rdquo;</blockquote><div class="quote-meta">Review 232405761</div></div><div class="card evidence-card"><blockquote>&ldquo;ruined my life.&rdquo;</blockquote><div class="quote-meta">Review 232206937</div></div><div class="card evidence-card"><blockquote>&ldquo;There’s nothing better than spending hours making a base just for someone to blow it up while you’re offline.&rdquo;</blockquote><div class="quote-meta">Review 232600192</div></div><div class="card evidence-card"><blockquote>&ldquo;Then a naked man named “xX_ThroatGoat420_Xx” appears outside your front door with a rock and somehow ruins your entire evening.&rdquo;</blockquote><div class="quote-meta">Review 232633601</div></div></div>
+    <h3 class="evidence-subhead">Marketing Claims Used In This Analysis</h3>
+    <div class="evidence-grid"><div class="card evidence-card"><div class="claim-id">M011</div><blockquote>&ldquo;Base Building and Raiding&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M027</div><blockquote>&ldquo;Design and build bases to store your loot, defend your territory, and control the resources of the island.&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M023</div><blockquote>&ldquo;You wake naked on a mysterious island, armed only with a rock and a torch.&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M032</div><blockquote>&ldquo;Cooperate with friends, make alliances, and build a settlement together.&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M033</div><blockquote>&ldquo;Explore the island and what’s happening in it, trade with other players, or prey on them, raiding their bases and taking their hard-won goods.&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M008</div><blockquote>&ldquo;Procedurally generated worlds with community map editor support&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M031</div><blockquote>&ldquo;Craft tools, armour, and weapons to defend yourself.&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M004</div><blockquote>&ldquo;Rust now enters its 13th year of continued expansion and has had over 395 content updates, with a guaranteed content patch every month.&rdquo;</blockquote></div><div class="card evidence-card"><div class="claim-id">M014</div><blockquote>&ldquo;Complex electrical, farming, and automation systems&rdquo;</blockquote></div></div>
+    
+  </section>
+
+  <footer class="page-footer">
+    Generated from 1,000 real customer reviews
+    and 33 real marketing claims. This file is self-contained and works fully offline.
+  </footer>
+</div>
+</body>
+</html>

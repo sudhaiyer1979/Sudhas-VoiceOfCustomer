@@ -1,0 +1,331 @@
+{
+  "game_name": "Rust",
+  "model": "claude (manual test substitute for OPENAI_API_KEY -- see WS8 delivery notes)",
+  "customer_perceptions": [
+    {
+      "source_theme_id": "T001",
+      "customer_perception": "Building and defending a base is the core activity players invest the most time in, and losing it feels like a major, memorable setback.",
+      "customer_description": "Reviews repeatedly describe pouring many hours into farming materials and building a base, only for it to be destroyed quickly by other players.",
+      "current_marketing_position": "Marketing already features base building and raiding prominently as a named feature.",
+      "alignment_type": "ALIGNED",
+      "mention_count": 118,
+      "supporting_review_ids": [
+        "232388889",
+        "232633601"
+      ],
+      "supporting_quotes": [
+        "I shouldn't have to spend 10 hours to build a base, just for it to be torn down in 15 seconds by no-lifes who have rocket launchers 4 hours after wipe, when I don't even have enough cloth to make clothes or low grade fuel to make a furnace.",
+        "You spend 6 hours farming wood, stone, sulfur, and whatever other garbage the forest demands from you, build a beautiful little base, organize your boxes, get a few guns, and finally think, “Wow, I’m actually doing pretty well.”"
+      ],
+      "marketing_claim_ids": [
+        "M011",
+        "M027"
+      ],
+      "recommended_action": "KEEP featuring base building and raiding prominently in marketing -- it matches what players spend the most time on and describe most vividly.",
+      "suggested_copy_direction": "Build something worth defending."
+    },
+    {
+      "source_theme_id": "T002",
+      "customer_perception": "The community's reputation for toxicity is a major, divisive talking point -- some players are put off by it, while others feel it's exaggerated once you find the right people.",
+      "customer_description": "Reviews are split between describing the community as one of the most toxic on Steam and pushing back that the reputation is overstated.",
+      "current_marketing_position": "Marketing does not address community tone or player behavior at all.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 112,
+      "supporting_review_ids": [
+        "232388889",
+        "232314214"
+      ],
+      "supporting_quotes": [
+        "One of the most toxic games on the internet, most toxic I've ever played.",
+        "Game is super fun, contrary to the popular belief of this game's community being \"toxic\" I actually found very fun people."
+      ],
+      "marketing_claim_ids": [],
+      "recommended_action": "ADD an honest, upfront acknowledgment of the game's hardcore, sometimes abrasive community so new players arrive with the right expectations instead of discovering it as a surprise.",
+      "suggested_copy_direction": "Not everyone you meet on the island is a friend. That's part of the story."
+    },
+    {
+      "source_theme_id": "T003",
+      "customer_perception": "The chaotic, resource-scarce opening -- spawning with nothing and scrambling to survive -- is a memorable, frequently described experience.",
+      "customer_description": "Players describe spawning on the beach with nothing, dying, and respawning repeatedly while trying to get established.",
+      "current_marketing_position": "Marketing already opens with this exact beat: waking up naked and armed only with a rock and a torch.",
+      "alignment_type": "ALIGNED",
+      "mention_count": 60,
+      "supporting_review_ids": [
+        "232208163",
+        "232233292"
+      ],
+      "supporting_quotes": [
+        "Spawn on the beach.",
+        "spawn in, get enslaved bye Russians and forced to work, die, spawn in, go inland, get killed by a bear, spawn on beach again, spend hours grinding to put up a base, get offline raided, repeat, i would not recommend this game unless you are mentally well."
+      ],
+      "marketing_claim_ids": [
+        "M023"
+      ],
+      "recommended_action": "KEEP leading with the naked-spawn, gather-or-die opening in marketing -- it's exactly what players remember and describe first.",
+      "suggested_copy_direction": "Nothing but a rock and a torch. Everything else you'll have to earn."
+    },
+    {
+      "source_theme_id": "T004",
+      "customer_perception": "Playing with friends and forming alliances creates the most meaningful, memorable experiences -- camaraderie is often described as what makes the grind worth it.",
+      "customer_description": "Players describe the friendships and shared memories made while playing as the emotional core of the game, whether teaming up or going solo against clans.",
+      "current_marketing_position": "Cooperation is mentioned only once, in passing, inside a single feature-list claim about building a settlement together.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 59,
+      "supporting_review_ids": [
+        "232581549",
+        "232608087"
+      ],
+      "supporting_quotes": [
+        "It can evoke every emotion you can feel, both mentally and physically, but the memories I’ve made playing it with friends—that alone makes everything worth it.",
+        "Absolutely fantastic, for anyone, wether you're trying to find new friends to play with, solo against massive clans, or even be one of those massive clans, rust is the game you want."
+      ],
+      "marketing_claim_ids": [
+        "M032"
+      ],
+      "recommended_action": "Make friendship, alliances and shared player stories a stronger part of Rust's core positioning.",
+      "suggested_copy_direction": "Survive together, form alliances, and create stories that last beyond the wipe."
+    },
+    {
+      "source_theme_id": "T005",
+      "customer_perception": "Players frequently describe the game as consuming their life or being genuinely addictive, often as backhanded praise for how compelling it is.",
+      "customer_description": "Multiple reviews use hyperbolic language about the game 'ruining their life' while still rating it highly and recommending it.",
+      "current_marketing_position": "Marketing does not reference the game's addictive, hard-to-put-down quality at all.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 51,
+      "supporting_review_ids": [
+        "232405761",
+        "232206937"
+      ],
+      "supporting_quotes": [
+        "This game is so bad it's fun and ruined my life 10/10 would rec :)",
+        "ruined my life."
+      ],
+      "marketing_claim_ids": [],
+      "recommended_action": "ADD messaging that leans into the game's compelling, hard-to-put-down nature -- players already describe this unprompted and positively, but marketing never acknowledges it.",
+      "suggested_copy_direction": "Just one more wipe. We promise."
+    },
+    {
+      "source_theme_id": "T006",
+      "customer_perception": "Losing a base to raiders while offline is a deeply frustrating, high-stakes moment that players describe vividly, and it drives much of the game's emotional intensity.",
+      "customer_description": "Reviews describe returning to find a base destroyed while they were away, often naming the specific player responsible.",
+      "current_marketing_position": "Raiding is only named as a two-word feature label without acknowledging the offline-vulnerability tension that makes it so memorable.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 45,
+      "supporting_review_ids": [
+        "232600192",
+        "232633601"
+      ],
+      "supporting_quotes": [
+        "There’s nothing better than spending hours making a base just for someone to blow it up while you’re offline.",
+        "Then a naked man named “xX_ThroatGoat420_Xx” appears outside your front door with a rock and somehow ruins your entire evening."
+      ],
+      "marketing_claim_ids": [
+        "M011",
+        "M033"
+      ],
+      "recommended_action": "ADD a clearer acknowledgment of the offline-raid risk as a core tension of the game, since it's one of the most vividly and frequently described emotional moments in reviews, not just a footnote under 'Raiding.'",
+      "suggested_copy_direction": "You can log off. Your base can't."
+    },
+    {
+      "source_theme_id": "T007",
+      "customer_perception": "A vocal group of players report frustration with anti-cheat bans they feel were unfair or unexplained, along with unresponsive support from the developer.",
+      "customer_description": "Reviews describe permanent bans -- including one for what the player describes as a joke -- with no clear appeals process.",
+      "current_marketing_position": "Marketing does not mention anti-cheat, moderation, or fair play at all.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 36,
+      "supporting_review_ids": [
+        "232564452",
+        "232526980"
+      ],
+      "supporting_quotes": [
+        "Got permanently EAC banned out of nowhere.",
+        "One of my favourite games so far but, i got permanently banned in facepunch servers for jokingly telling my friend to kill themselves, which i mean i guess it's fair but it's so ♥♥♥♥♥♥♥ annoying it's a perma-ban for a joke (This is my best guess since they don't even give"
+      ],
+      "marketing_claim_ids": [],
+      "recommended_action": "ADD visible, reassuring messaging about how anti-cheat enforcement and the appeals process work, since ban-related frustration is a recurring trust concern current marketing does not address.",
+      "suggested_copy_direction": "Fair play, enforced -- and a real appeals process when something goes wrong."
+    },
+    {
+      "source_theme_id": "T008",
+      "customer_perception": "New players frequently feel blindsided by the steep learning curve and slow onboarding, leading some to regret the purchase or attempt a refund before they get past the first few hours.",
+      "customer_description": "Reviews describe expecting something like other survival games, then feeling misled by how long it takes to get established, sometimes past Steam's refund window.",
+      "current_marketing_position": "Marketing does not set expectations about the learning curve or the time investment required before the game 'clicks.'",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 35,
+      "supporting_review_ids": [
+        "232598653",
+        "232385958"
+      ],
+      "supporting_quotes": [
+        "at the time of purchase I thought it was like ARK and didn't manage to refund this crap cause I thought I could change my character later when I am less busy, so ♥♥♥♥ this with all my heart.",
+        "Do not buy this game you spend a large percentage of your time looking at a loading screen and then when you try to refund it to steam will say you spent way too long on the game so buying this game is Just paying for a expensive loading screen that never ends"
+      ],
+      "marketing_claim_ids": [],
+      "recommended_action": "ADD upfront expectation-setting about Rust's steep learning curve and slower early hours, so new players aren't blindsided into early refund attempts.",
+      "suggested_copy_direction": "Rust rewards patience. The first few hours are the hardest -- and worth pushing through."
+    },
+    {
+      "source_theme_id": "T009",
+      "customer_perception": "The crafting and building systems feel deep and satisfying, and each wipe delivers a genuinely fresh start that keeps players coming back.",
+      "customer_description": "Players describe the crafting system as deep and the building mechanics as satisfying, with each wipe offering a fresh, chaotic start.",
+      "current_marketing_position": "Crafting is only loosely referenced through generic feature-list claims about tools, armour, and community-made maps.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 35,
+      "supporting_review_ids": [
+        "232645899",
+        "232603811"
+      ],
+      "supporting_quotes": [
+        "Rust is a brutally unforgiving survival game that tests your patience, strategy, and social skills like no other.",
+        "One of the best survival games"
+      ],
+      "marketing_claim_ids": [
+        "M008",
+        "M031"
+      ],
+      "recommended_action": "ADD stronger emphasis on crafting depth and the fresh-start feeling of each wipe as a core selling point -- players consistently praise this, but it's only loosely touched on in feature-list claims today.",
+      "suggested_copy_direction": "Every wipe is a blank page. What you build on it is up to you."
+    },
+    {
+      "source_theme_id": "T010",
+      "customer_perception": "Long loading screens and periodic crashes are a recurring frustration that colors players' first impressions before they even get into the game.",
+      "customer_description": "Reviews describe long waits just to load into a server, which shapes their first experience of the game.",
+      "current_marketing_position": "Marketing does not mention loading times, performance, or technical requirements.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 34,
+      "supporting_review_ids": [
+        "232208163",
+        "232686756"
+      ],
+      "supporting_quotes": [
+        "Finally load in.",
+        "Load into Rust"
+      ],
+      "marketing_claim_ids": [],
+      "recommended_action": "REFRAME loading-time and performance complaints as an opportunity for proactive communication -- publish clear system requirements and set expectations about longer initial load times before purchase.",
+      "suggested_copy_direction": "We're always optimizing. Check current system recommendations before you dive in."
+    },
+    {
+      "source_theme_id": "T011",
+      "customer_perception": "Despite a steep learning curve, players who push through often describe deep enjoyment and a sense of mastery once the game 'clicks.'",
+      "customer_description": "Reviews describe the crafting and building systems as satisfying once understood, and returning players describe the relearning process as refreshing rather than frustrating.",
+      "current_marketing_position": "Marketing does not acknowledge the learning curve or frame mastering it as part of the reward.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 34,
+      "supporting_review_ids": [
+        "232645899",
+        "232524999"
+      ],
+      "supporting_quotes": [
+        "The crafting system is deep, the building mechanics are satisfying, and every wipe brings a fresh, chaotic start full of possibility.",
+        "I have played Rust Console since it was released and have enjoyed it but switching to pc and learning the game anew has been refreshing!"
+      ],
+      "marketing_claim_ids": [],
+      "recommended_action": "ADD messaging that acknowledges the learning curve directly and frames mastering it as part of the reward, since players who get past the early frustration consistently describe strong long-term enjoyment.",
+      "suggested_copy_direction": "It won't click right away. When it does, you won't want to stop."
+    },
+    {
+      "source_theme_id": "T012",
+      "customer_perception": "Players value the frequent content updates but are frustrated by a persistent cheating problem they feel isn't being addressed quickly enough.",
+      "customer_description": "Reviews praise the pace of updates while separately describing high volumes of cheaters and wanting more active in-game moderation.",
+      "current_marketing_position": "Marketing highlights frequent content updates but never mentions anti-cheat or fair play.",
+      "alignment_type": "UNDERREPRESENTED",
+      "mention_count": 31,
+      "supporting_review_ids": [
+        "232288705",
+        "232317466"
+      ],
+      "supporting_quotes": [
+        "Honestly its crazy how many high hour cheaters there are, Game really needs in game admins gaming on EVERY server just insane amount of cheating, its no wonder so many legit players give in and start cheating.",
+        "to many cheaters terrible fps ♥♥♥♥♥♥♥ updates"
+      ],
+      "marketing_claim_ids": [
+        "M004"
+      ],
+      "recommended_action": "ADD clear, ongoing communication about anti-cheat investment and enforcement, since cheating is one of the most frequently repeated frustrations and current marketing only ever talks about content updates, never fair play.",
+      "suggested_copy_direction": "New content every month. Zero tolerance for cheaters, every day."
+    }
+  ],
+  "top_recommendations": [
+    {
+      "priority": 1,
+      "title": "Put Friendship and Alliances at the Center of Positioning",
+      "what_customers_are_saying": "Players repeatedly describe playing with friends and forming alliances as the most meaningful part of the experience, often citing it as what makes the grind worthwhile.",
+      "what_marketing_says_today": "Cooperation is mentioned only once, in passing, as part of a single feature-list claim about building a settlement together.",
+      "gap": "One of the most emotionally resonant, frequently volunteered positives in reviews is almost absent from the game's core positioning.",
+      "recommended_action": "ADD friendship, alliances, and shared player stories as a stronger part of Rust's core positioning, not just a footnote in a feature list.",
+      "suggested_copy_direction": "Survive together, form alliances, and create stories that last beyond the wipe.",
+      "evidence_review_ids": [
+        "232581549",
+        "232608087"
+      ],
+      "evidence_claim_ids": [
+        "M032"
+      ]
+    },
+    {
+      "priority": 2,
+      "title": "Turn Offline Raiding Into a Named Feature, Not a Footnote",
+      "what_customers_are_saying": "Losing a base to raiders while offline is one of the most vividly described, emotionally intense moments in reviews -- both a source of frustration and a badge of honor.",
+      "what_marketing_says_today": "Raiding is mentioned only as a two-word feature label, 'Base Building and Raiding,' with no acknowledgment of the offline-vulnerability tension that makes it memorable.",
+      "gap": "The specific, high-stakes drama of offline raiding, which players describe in vivid detail, isn't reflected in how the feature is marketed.",
+      "recommended_action": "REFRAME the 'Raiding' feature claim to explicitly name the offline-vulnerability stakes, since that's the part players actually talk about.",
+      "suggested_copy_direction": "You can log off. Your base can't.",
+      "evidence_review_ids": [
+        "232600192",
+        "232633601"
+      ],
+      "evidence_claim_ids": [
+        "M011"
+      ]
+    },
+    {
+      "priority": 3,
+      "title": "Lead With Crafting Depth and the Fresh-Wipe Feeling",
+      "what_customers_are_saying": "Players consistently praise the depth of the crafting and building systems and the excitement of a fresh start after each wipe.",
+      "what_marketing_says_today": "Crafting and building are described only as a plain feature list (tools, armour, weapons; electrical, farming, and automation systems) without conveying the satisfaction players report.",
+      "gap": "A strongly and consistently praised feature is presented as a spec sheet rather than an emotional selling point.",
+      "recommended_action": "ADD language that conveys the satisfaction and sense of possibility players describe, not just a list of what can be crafted.",
+      "suggested_copy_direction": "Every wipe is a blank page. What you build on it is up to you.",
+      "evidence_review_ids": [
+        "232645899",
+        "232603811"
+      ],
+      "evidence_claim_ids": [
+        "M031",
+        "M014"
+      ]
+    },
+    {
+      "priority": 4,
+      "title": "Address Anti-Cheat and Ban Fairness Head-On",
+      "what_customers_are_saying": "A recurring, emotionally charged complaint is unfair or unexplained permanent bans, alongside frustration that cheaters remain widespread.",
+      "what_marketing_says_today": "Marketing never mentions anti-cheat, moderation, or fair play at all.",
+      "gap": "A significant trust concern for both new and existing players goes completely unaddressed in current messaging.",
+      "recommended_action": "ADD clear, visible communication about how anti-cheat enforcement and the ban appeals process work.",
+      "suggested_copy_direction": "Fair play, enforced -- and a real appeals process when something goes wrong.",
+      "evidence_review_ids": [
+        "232564452",
+        "232526980",
+        "232288705"
+      ],
+      "evidence_claim_ids": []
+    },
+    {
+      "priority": 5,
+      "title": "Set Expectations About the Learning Curve Before Purchase",
+      "what_customers_are_saying": "New players often feel blindsided by the steep learning curve and slow start, sometimes leading to early refund attempts, while players who push through describe strong long-term enjoyment.",
+      "what_marketing_says_today": "Marketing describes the harsh starting scenario (naked, armed with a rock) but doesn't warn players that overcoming the learning curve itself takes real time.",
+      "gap": "There's a mismatch between the fast, exciting tone of current marketing and the slower, harder onboarding reality new players actually experience.",
+      "recommended_action": "ADD upfront, honest framing that the first few hours are intentionally hard, so new players arrive with the right expectations instead of bouncing off early.",
+      "suggested_copy_direction": "Rust rewards patience. The first few hours are the hardest -- and worth pushing through.",
+      "evidence_review_ids": [
+        "232598653",
+        "232524999"
+      ],
+      "evidence_claim_ids": [
+        "M023"
+      ]
+    }
+  ]
+}

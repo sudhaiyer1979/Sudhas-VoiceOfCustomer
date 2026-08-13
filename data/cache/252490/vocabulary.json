@@ -1,0 +1,922 @@
+{
+  "review_only_terms": [
+    {
+      "term": "hours",
+      "mention_count": 52,
+      "example_review_ids": [
+        "232186441",
+        "232189248",
+        "232208163",
+        "232217341",
+        "232217383"
+      ]
+    },
+    {
+      "term": "life",
+      "mention_count": 50,
+      "example_review_ids": [
+        "232179681",
+        "232190752",
+        "232191164",
+        "232192372",
+        "232198645"
+      ]
+    },
+    {
+      "term": "people",
+      "mention_count": 45,
+      "example_review_ids": [
+        "232181667",
+        "232183597",
+        "232195946",
+        "232202336",
+        "232206085"
+      ]
+    },
+    {
+      "term": "killed",
+      "mention_count": 38,
+      "example_review_ids": [
+        "232208163",
+        "232210602",
+        "232213824",
+        "232220260",
+        "232231587"
+      ]
+    },
+    {
+      "term": "buy",
+      "mention_count": 29,
+      "example_review_ids": [
+        "232189324",
+        "232202336",
+        "232207363",
+        "232208647",
+        "232214753"
+      ]
+    },
+    {
+      "term": "spawn",
+      "mention_count": 25,
+      "example_review_ids": [
+        "232190107",
+        "232196704",
+        "232201063",
+        "232208163",
+        "232208690"
+      ]
+    },
+    {
+      "term": "beach",
+      "mention_count": 20,
+      "example_review_ids": [
+        "232207159",
+        "232208163",
+        "232208690",
+        "232221947",
+        "232222996"
+      ]
+    },
+    {
+      "term": "loading",
+      "mention_count": 20,
+      "example_review_ids": [
+        "232208163",
+        "232227900",
+        "232229679",
+        "232252737",
+        "232256423"
+      ]
+    },
+    {
+      "term": "kid",
+      "mention_count": 19,
+      "example_review_ids": [
+        "232199625",
+        "232204965",
+        "232208415",
+        "232210557",
+        "232326506"
+      ]
+    },
+    {
+      "term": "addicted",
+      "mention_count": 15,
+      "example_review_ids": [
+        "232180760",
+        "232198645",
+        "232214753",
+        "232231337",
+        "232245702"
+      ]
+    },
+    {
+      "term": "survival",
+      "mention_count": 15,
+      "example_review_ids": [
+        "232195946",
+        "232273225",
+        "232281378",
+        "232356174",
+        "232406246"
+      ]
+    },
+    {
+      "term": "toxic",
+      "mention_count": 15,
+      "example_review_ids": [
+        "232189248",
+        "232208361",
+        "232215722",
+        "232219789",
+        "232305872"
+      ]
+    },
+    {
+      "term": "wipe",
+      "mention_count": 15,
+      "example_review_ids": [
+        "232189248",
+        "232191164",
+        "232208163",
+        "232256398",
+        "232319792"
+      ]
+    },
+    {
+      "term": "banned",
+      "mention_count": 14,
+      "example_review_ids": [
+        "232204995",
+        "232226900",
+        "232229996",
+        "232232769",
+        "232271677"
+      ]
+    },
+    {
+      "term": "clan",
+      "mention_count": 13,
+      "example_review_ids": [
+        "232208163",
+        "232232943",
+        "232256398",
+        "232278507",
+        "232299901"
+      ]
+    },
+    {
+      "term": "solo",
+      "mention_count": 13,
+      "example_review_ids": [
+        "232189248",
+        "232235016",
+        "232256398",
+        "232316065",
+        "232387659"
+      ]
+    },
+    {
+      "term": "crashes",
+      "mention_count": 12,
+      "example_review_ids": [
+        "232192366",
+        "232230987",
+        "232272301",
+        "232305438",
+        "232311022"
+      ]
+    },
+    {
+      "term": "minutes",
+      "mention_count": 12,
+      "example_review_ids": [
+        "232208163",
+        "232211799",
+        "232221947",
+        "232229679",
+        "232300785"
+      ]
+    },
+    {
+      "term": "work",
+      "mention_count": 12,
+      "example_review_ids": [
+        "232223025",
+        "232233292",
+        "232313158",
+        "232324748",
+        "232393727"
+      ]
+    },
+    {
+      "term": "food",
+      "mention_count": 11,
+      "example_review_ids": [
+        "232199625",
+        "232204965",
+        "232208163",
+        "232220812",
+        "232233936"
+      ]
+    },
+    {
+      "term": "friendly",
+      "mention_count": 11,
+      "example_review_ids": [
+        "232192786",
+        "232208163",
+        "232221344",
+        "232256398",
+        "232300785"
+      ]
+    },
+    {
+      "term": "lose",
+      "mention_count": 11,
+      "example_review_ids": [
+        "232206085",
+        "232207982",
+        "232208163",
+        "232265753",
+        "232316122"
+      ]
+    },
+    {
+      "term": "pvp",
+      "mention_count": 11,
+      "example_review_ids": [
+        "232193849",
+        "232208163",
+        "232220260",
+        "232316065",
+        "232329241"
+      ]
+    },
+    {
+      "term": "slurs",
+      "mention_count": 11,
+      "example_review_ids": [
+        "232208690",
+        "232273005",
+        "232311485",
+        "232354603",
+        "232388889"
+      ]
+    },
+    {
+      "term": "spend",
+      "mention_count": 11,
+      "example_review_ids": [
+        "232208163",
+        "232233292",
+        "232256530",
+        "232300785",
+        "232385958"
+      ]
+    },
+    {
+      "term": "help",
+      "mention_count": 10,
+      "example_review_ids": [
+        "232183597",
+        "232205992",
+        "232221947",
+        "232223025",
+        "232262681"
+      ]
+    },
+    {
+      "term": "join",
+      "mention_count": 10,
+      "example_review_ids": [
+        "232208163",
+        "232226244",
+        "232268940",
+        "232388745",
+        "232490694"
+      ]
+    },
+    {
+      "term": "ruins",
+      "mention_count": 10,
+      "example_review_ids": [
+        "232179681",
+        "232191164",
+        "232206937",
+        "232300393",
+        "232318689"
+      ]
+    },
+    {
+      "term": "sleeping",
+      "mention_count": 10,
+      "example_review_ids": [
+        "232206790",
+        "232207363",
+        "232207982",
+        "232208163",
+        "232240726"
+      ]
+    },
+    {
+      "term": "stop",
+      "mention_count": 10,
+      "example_review_ids": [
+        "232188931",
+        "232227978",
+        "232230026",
+        "232272204",
+        "232433812"
+      ]
+    },
+    {
+      "term": "call",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232213824",
+        "232241959",
+        "232273005",
+        "232363786",
+        "232404021"
+      ]
+    },
+    {
+      "term": "dead",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232208163",
+        "232211209",
+        "232219296",
+        "232240726",
+        "232316065"
+      ]
+    },
+    {
+      "term": "enjoy",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232189248",
+        "232219789",
+        "232280798",
+        "232281378",
+        "232314194"
+      ]
+    },
+    {
+      "term": "facepunch",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232289195",
+        "232324748",
+        "232356762",
+        "232402595",
+        "232406246"
+      ]
+    },
+    {
+      "term": "iraq",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232199625",
+        "232204965",
+        "232233936",
+        "232362106",
+        "232416210"
+      ]
+    },
+    {
+      "term": "quit",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232189248",
+        "232190090",
+        "232217383",
+        "232401971",
+        "232404021"
+      ]
+    },
+    {
+      "term": "recomend",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232204965",
+        "232207636",
+        "232207824",
+        "232315871",
+        "232395820"
+      ]
+    },
+    {
+      "term": "refund",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232189324",
+        "232202336",
+        "232385958",
+        "232388889",
+        "232402595"
+      ]
+    },
+    {
+      "term": "waste",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232189324",
+        "232274504",
+        "232289195",
+        "232388889",
+        "232404021"
+      ]
+    },
+    {
+      "term": "week",
+      "mention_count": 9,
+      "example_review_ids": [
+        "232232769",
+        "232314194",
+        "232350404",
+        "232388889",
+        "232422362"
+      ]
+    },
+    {
+      "term": "cheat",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232208163",
+        "232223015",
+        "232271362",
+        "232288705",
+        "232314592"
+      ]
+    },
+    {
+      "term": "died",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232221947",
+        "232229872",
+        "232393727",
+        "232479442",
+        "232480105"
+      ]
+    },
+    {
+      "term": "fight",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232207159",
+        "232208163",
+        "232210557",
+        "232374120",
+        "232393727"
+      ]
+    },
+    {
+      "term": "grind",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232190822",
+        "232209482",
+        "232233292",
+        "232316065",
+        "232382581"
+      ]
+    },
+    {
+      "term": "long",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232189248",
+        "232210690",
+        "232311485",
+        "232385958",
+        "232388745"
+      ]
+    },
+    {
+      "term": "offline",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232233292",
+        "232286843",
+        "232289983",
+        "232307756",
+        "232387659"
+      ]
+    },
+    {
+      "term": "rage",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232191164",
+        "232208188",
+        "232217383",
+        "232288349",
+        "232316065"
+      ]
+    },
+    {
+      "term": "seconds",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232186441",
+        "232326506",
+        "232388889",
+        "232399714",
+        "232549548"
+      ]
+    },
+    {
+      "term": "since",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232224217",
+        "232393727",
+        "232404536",
+        "232471689",
+        "232524999"
+      ]
+    },
+    {
+      "term": "skin",
+      "mention_count": 8,
+      "example_review_ids": [
+        "232180760",
+        "232221947",
+        "232256398",
+        "232324748",
+        "232326506"
+      ]
+    },
+    {
+      "term": "offline raided",
+      "mention_count": 7,
+      "example_review_ids": [
+        "232233292",
+        "232286843",
+        "232289983",
+        "232307756",
+        "232387659"
+      ]
+    },
+    {
+      "term": "spend hours",
+      "mention_count": 4,
+      "example_review_ids": [
+        "232233292",
+        "232388889",
+        "232600192",
+        "232633601"
+      ]
+    },
+    {
+      "term": "NAKED PEOPLE",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232231587",
+        "232550766",
+        "232564913"
+      ]
+    },
+    {
+      "term": "PVE server",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232220260",
+        "232222445",
+        "232611006"
+      ]
+    },
+    {
+      "term": "Spend minutes",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232208163",
+        "232300785",
+        "232686756"
+      ]
+    },
+    {
+      "term": "black people",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232183597",
+        "232480074",
+        "232487045"
+      ]
+    },
+    {
+      "term": "door camping",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232208163",
+        "232229679",
+        "232404021"
+      ]
+    },
+    {
+      "term": "keeps crashing",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232192366",
+        "232230987",
+        "232478423"
+      ]
+    },
+    {
+      "term": "loading screen",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232300785",
+        "232385958",
+        "232686756"
+      ]
+    },
+    {
+      "term": "mental health",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232205992",
+        "232380812",
+        "232499020"
+      ]
+    },
+    {
+      "term": "naked men",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232252017",
+        "232531960",
+        "232578975"
+      ]
+    },
+    {
+      "term": "racial slurs",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232208690",
+        "232354603",
+        "232452197"
+      ]
+    },
+    {
+      "term": "toxic community",
+      "mention_count": 3,
+      "example_review_ids": [
+        "232208361",
+        "232458666",
+        "232645899"
+      ]
+    }
+  ],
+  "marketing_only_terms": [
+    {
+      "term": "monuments",
+      "mention_count": 4,
+      "claim_ids": [
+        "M015",
+        "M020",
+        "M022",
+        "M025"
+      ]
+    },
+    {
+      "term": "weapons",
+      "mention_count": 3,
+      "claim_ids": [
+        "M005",
+        "M019",
+        "M031"
+      ]
+    },
+    {
+      "term": "Complex",
+      "mention_count": 2,
+      "claim_ids": [
+        "M014",
+        "M022"
+      ]
+    },
+    {
+      "term": "Transportation",
+      "mention_count": 2,
+      "claim_ids": [
+        "M010",
+        "M028"
+      ]
+    },
+    {
+      "term": "areas",
+      "mention_count": 2,
+      "claim_ids": [
+        "M013",
+        "M015"
+      ]
+    },
+    {
+      "term": "bases",
+      "mention_count": 2,
+      "claim_ids": [
+        "M027",
+        "M033"
+      ]
+    },
+    {
+      "term": "factions",
+      "mention_count": 2,
+      "claim_ids": [
+        "M012",
+        "M025"
+      ]
+    },
+    {
+      "term": "include",
+      "mention_count": 2,
+      "claim_ids": [
+        "M005",
+        "M007"
+      ]
+    },
+    {
+      "term": "modular",
+      "mention_count": 2,
+      "claim_ids": [
+        "M010",
+        "M021"
+      ]
+    },
+    {
+      "term": "mysterious",
+      "mention_count": 2,
+      "claim_ids": [
+        "M023",
+        "M025"
+      ]
+    },
+    {
+      "term": "regular",
+      "mention_count": 2,
+      "claim_ids": [
+        "M005",
+        "M006"
+      ]
+    },
+    {
+      "term": "settlements",
+      "mention_count": 2,
+      "claim_ids": [
+        "M025",
+        "M032"
+      ]
+    },
+    {
+      "term": "survivors",
+      "mention_count": 2,
+      "claim_ids": [
+        "M002",
+        "M026"
+      ]
+    },
+    {
+      "term": "trains",
+      "mention_count": 2,
+      "claim_ids": [
+        "M010",
+        "M016"
+      ]
+    },
+    {
+      "term": "vehicles",
+      "mention_count": 2,
+      "claim_ids": [
+        "M005",
+        "M019"
+      ]
+    }
+  ],
+  "same_idea_different_words": [
+    {
+      "concept": "Weapons & combat gear",
+      "marketing_phrase": "weapons",
+      "player_phrase": "gun",
+      "claim_ids": [
+        "M005",
+        "M019",
+        "M031"
+      ],
+      "review_ids": [
+        "232208163",
+        "232300785",
+        "232471743",
+        "232633601",
+        "232665810"
+      ]
+    },
+    {
+      "concept": "Survival",
+      "marketing_phrase": "survivors",
+      "player_phrase": "survival",
+      "claim_ids": [
+        "M002",
+        "M026"
+      ],
+      "review_ids": [
+        "232195946",
+        "232273225",
+        "232281378",
+        "232356174",
+        "232406246"
+      ]
+    },
+    {
+      "concept": "Player groups & alliances",
+      "marketing_phrase": "alliances",
+      "player_phrase": "clan",
+      "claim_ids": [
+        "M032"
+      ],
+      "review_ids": [
+        "232208163",
+        "232232943",
+        "232256398",
+        "232278507",
+        "232299901"
+      ]
+    },
+    {
+      "concept": "Player-built home/structure",
+      "marketing_phrase": "bases",
+      "player_phrase": "base",
+      "claim_ids": [
+        "M027",
+        "M033"
+      ],
+      "review_ids": [
+        "232191164",
+        "232208163",
+        "232213824",
+        "232229679",
+        "232233292"
+      ]
+    },
+    {
+      "concept": "Resource-gathering & crafting depth",
+      "marketing_phrase": "Complex",
+      "player_phrase": "grind",
+      "claim_ids": [
+        "M014",
+        "M022"
+      ],
+      "review_ids": [
+        "232190822",
+        "232209482",
+        "232233292",
+        "232316065",
+        "232382581"
+      ]
+    },
+    {
+      "concept": "Cooperation",
+      "marketing_phrase": "Cooperate",
+      "player_phrase": "together",
+      "claim_ids": [
+        "M032"
+      ],
+      "review_ids": [
+        "232241959",
+        "232393727",
+        "232471689",
+        "232603811"
+      ]
+    },
+    {
+      "concept": "Exploration",
+      "marketing_phrase": "Explore",
+      "player_phrase": "discovered",
+      "claim_ids": [
+        "M015",
+        "M025",
+        "M033"
+      ],
+      "review_ids": [
+        "232229872",
+        "232393727"
+      ]
+    },
+    {
+      "concept": "Difficulty & danger",
+      "marketing_phrase": "dangerous",
+      "player_phrase": "unforgiving",
+      "claim_ids": [
+        "M006"
+      ],
+      "review_ids": [
+        "232189248",
+        "232645899",
+        "232677842"
+      ]
+    }
+  ]
+}
