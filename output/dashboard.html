@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rust - Voice of Customer vs Marketing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --ink: #1a1d23;
+  --muted: #5a6270;
+  --bg: #ffffff;
+  --panel: #f6f7f9;
+  --border: #e1e4e9;
+  --accent: #2f5fdb;
+  --accent-soft: #eaf0ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.5;
+}
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 56px 96px;
+}
+header.hero {
+  text-align: center;
+  padding: 40px 24px 48px;
+  border-bottom: 4px solid var(--accent);
+  margin-bottom: 48px;
+}
+header.hero h1 {
+  font-size: 52px;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+header.hero .subtitle {
+  font-size: 24px;
+  color: var(--muted);
+  margin: 0;
+}
+section.block {
+  margin-bottom: 72px;
+}
+section.block h2 {
+  font-size: 36px;
+  margin: 0 0 28px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--border);
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+}
+.stat-number {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.stat-label {
+  font-size: 22px;
+  color: var(--muted);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 28px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.card-header h3 {
+  font-size: 24px;
+  margin: 0;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.mention-count {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.card-note {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+.mini-quote {
+  margin: 14px 0 0;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  font-style: italic;
+  font-size: 18px;
+  border-radius: 4px;
+}
+.claim-id {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 2px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.list-footer {
+  color: var(--muted);
+  font-size: 17px;
+  margin-top: 20px;
+  text-align: center;
+}
+.language-compare { margin-bottom: 40px; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 19px;
+}
+.compare-table th, .compare-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.compare-table th {
+  color: var(--muted);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.concept-cell { font-weight: 600; }
+.phrase-chip {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.marketing-chip { background: var(--accent-soft); color: var(--accent); }
+.player-chip { background: #eafaf1; color: #1e7e4a; }
+.term-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.term-column h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.term-list { list-style: none; margin: 0; padding: 0; }
+.term-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 19px;
+}
+.term-word { font-weight: 600; }
+.term-count { color: var(--muted); }
+.list-footer-item { color: var(--muted); font-style: italic; justify-content: center !important; }
+.keywords { color: var(--muted); font-size: 17px; margin: 0; }
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 24px;
+}
+.quote-card blockquote {
+  margin: 0 0 14px;
+  font-size: 21px;
+  line-height: 1.5;
+}
+.quote-meta {
+  color: var(--muted);
+  font-size: 16px;
+}
+.rec-yes { color: #1e7e4a; font-weight: 600; }
+.rec-no { color: #a4302a; font-weight: 600; }
+.empty-note { color: var(--muted); font-style: italic; }
+footer.page-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 900px) {
+  .summary-grid, .term-columns { grid-template-columns: 1fr; }
+  body { font-size: 18px; }
+  header.hero h1 { font-size: 38px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <h1>Rust &mdash; Voice of Customer vs Marketing</h1>
+    <p class="subtitle">What real players say, compared with what the store page says</p>
+  </header>
+
+  <section class="block">
+    <h2>Summary</h2>
+    
+    <section class="summary-grid">
+      <div class="stat-card">
+        <div class="stat-number">1,000</div>
+        <div class="stat-label">Reviews Analyzed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">33</div>
+        <div class="stat-label">Marketing Claims Analyzed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Major Player Themes</div>
+      </div>
+    </section>
+    
+  </section>
+
+  <section class="block">
+    <h2>What Players Value That Marketing Misses</h2>
+    <div class="card-grid">
+        <div class="card strength-card">
+          <div class="card-header">
+            <h3>Life &amp; Ruins</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">51 player mentions</div>
+          <p class="card-note">Not mentioned in the marketing copy at all.</p>
+          <blockquote class="mini-quote">&ldquo;Nature, trees, vast distances, animals, ruins, and...people.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card strength-card">
+          <div class="card-header">
+            <h3>Enjoy &amp; Perfect &amp; Learn</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">34 player mentions</div>
+          <p class="card-note">Not mentioned in the marketing copy at all.</p>
+          <blockquote class="mini-quote">&ldquo;Once I loaded into the world, an island of apparent great size, I enjoyed the experience from the start.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card strength-card">
+          <div class="card-header">
+            <h3>Friends &amp; Solo &amp; Wipe</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">59 player mentions</div>
+          <p class="card-note">Touched on by 1 of the marketing claims (M032).</p>
+          <blockquote class="mini-quote">&ldquo;It can evoke every emotion you can feel, both mentally and physically, but the memories I’ve made playing it with friends—that alone makes everything worth it.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card strength-card">
+          <div class="card-header">
+            <h3>Raided &amp; Offline &amp; Entire</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">45 player mentions</div>
+          <p class="card-note">Touched on by 2 of the marketing claims (M011, M033).</p>
+          <blockquote class="mini-quote">&ldquo;Place your sleeping bag directly outside.&rdquo;</blockquote>
+        </div>
+        
+        <div class="card strength-card">
+          <div class="card-header">
+            <h3>Survival &amp; Fresh &amp; Craft</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">35 player mentions</div>
+          <p class="card-note">Touched on by 2 of the marketing claims (M008, M031).</p>
+          <blockquote class="mini-quote">&ldquo;One of the best survival games&rdquo;</blockquote>
+        </div>
+        </div>
+  </section>
+
+  <section class="block">
+    <h2>What Marketing Says That Players Rarely Mention</h2>
+    <div class="card-grid">
+        <div class="card disconnect-card">
+          <div class="claim-id">M022</div>
+          <blockquote class="mini-quote">&ldquo;And much more to come throughout the year, including an update to the player’s character model, an apartment complex monument, more animals, and upgrades to the caves and tunnels !&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M010</div>
+          <blockquote class="mini-quote">&ldquo;Transportation: horses, modular cars, hot air balloons, helicopters, bikes, trains, boats, and more&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M021</div>
+          <blockquote class="mini-quote">&ldquo;2026 New addition: Modular boats, the deep sea, tropical islands, floating cities, and more!&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M006</div>
+          <blockquote class="mini-quote">&ldquo;Keep an eye out for regular seasonal events, as there’s always something interesting or dangerous (or both) happening on the island.&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M025</div>
+          <blockquote class="mini-quote">&ldquo;Explore the island and its abandoned settlements, mysterious monuments, and the factions that occupy them.&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M018</div>
+          <blockquote class="mini-quote">&ldquo;Massive recent graphics upgrade and environment overhaul&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M019</div>
+          <blockquote class="mini-quote">&ldquo;Primitive game mode, siege weapons, and vehicles added&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        
+        <div class="card disconnect-card">
+          <div class="claim-id">M020</div>
+          <blockquote class="mini-quote">&ldquo;New Jungle biome with more wild animals, missions, and monuments&rdquo;</blockquote>
+          <p class="card-note">No player theme shares matching keywords with this claim (0 of 12 major themes identified from the collected reviews).</p>
+        </div>
+        </div><p class="list-footer">+ 10 more marketing claims not reflected in any major player theme.</p>
+  </section>
+
+  <section class="block">
+    <h2>Marketing Language vs Player Language</h2>
+    
+    <div class="language-compare">
+    <table class="compare-table">
+      <thead>
+        <tr><th>Concept</th><th>Marketing Says</th><th>Players Say</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="concept-cell">Weapons &amp; combat gear</td>
+          <td><span class="phrase-chip marketing-chip">weapons</span></td>
+          <td><span class="phrase-chip player-chip">gun</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Survival</td>
+          <td><span class="phrase-chip marketing-chip">survivors</span></td>
+          <td><span class="phrase-chip player-chip">survival</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Player groups &amp; alliances</td>
+          <td><span class="phrase-chip marketing-chip">alliances</span></td>
+          <td><span class="phrase-chip player-chip">clan</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Player-built home/structure</td>
+          <td><span class="phrase-chip marketing-chip">bases</span></td>
+          <td><span class="phrase-chip player-chip">base</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Resource-gathering &amp; crafting depth</td>
+          <td><span class="phrase-chip marketing-chip">Complex</span></td>
+          <td><span class="phrase-chip player-chip">grind</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Cooperation</td>
+          <td><span class="phrase-chip marketing-chip">Cooperate</span></td>
+          <td><span class="phrase-chip player-chip">together</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Exploration</td>
+          <td><span class="phrase-chip marketing-chip">Explore</span></td>
+          <td><span class="phrase-chip player-chip">discovered</span></td>
+        </tr>
+        
+        <tr>
+          <td class="concept-cell">Difficulty &amp; danger</td>
+          <td><span class="phrase-chip marketing-chip">dangerous</span></td>
+          <td><span class="phrase-chip player-chip">unforgiving</span></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="term-columns">
+      <div class="term-column">
+        <h3>Words Players Use That Marketing Never Does</h3>
+        <ul class="term-list"><li><span class="term-word">hours</span><span class="term-count">52&times;</span></li><li><span class="term-word">life</span><span class="term-count">50&times;</span></li><li><span class="term-word">people</span><span class="term-count">45&times;</span></li><li><span class="term-word">killed</span><span class="term-count">38&times;</span></li><li><span class="term-word">buy</span><span class="term-count">29&times;</span></li><li><span class="term-word">spawn</span><span class="term-count">25&times;</span></li><li><span class="term-word">beach</span><span class="term-count">20&times;</span></li><li><span class="term-word">loading</span><span class="term-count">20&times;</span></li><li><span class="term-word">kid</span><span class="term-count">19&times;</span></li><li><span class="term-word">addicted</span><span class="term-count">15&times;</span></li><li class="list-footer-item">+ 53 more</li></ul>
+      </div>
+      <div class="term-column">
+        <h3>Words Marketing Uses That Players Never Do</h3>
+        <ul class="term-list"><li><span class="term-word">monuments</span><span class="term-count">4&times;</span></li><li><span class="term-word">weapons</span><span class="term-count">3&times;</span></li><li><span class="term-word">Complex</span><span class="term-count">2&times;</span></li><li><span class="term-word">Transportation</span><span class="term-count">2&times;</span></li><li><span class="term-word">areas</span><span class="term-count">2&times;</span></li><li><span class="term-word">bases</span><span class="term-count">2&times;</span></li><li><span class="term-word">factions</span><span class="term-count">2&times;</span></li><li><span class="term-word">include</span><span class="term-count">2&times;</span></li><li><span class="term-word">modular</span><span class="term-count">2&times;</span></li><li><span class="term-word">mysterious</span><span class="term-count">2&times;</span></li><li class="list-footer-item">+ 5 more</li></ul>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="block">
+    <h2>Major Player Themes</h2>
+    <div class="card-grid">
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Hours &amp; Base &amp; Spend</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">118 mentions</div>
+          <p class="keywords">hours &middot; base &middot; spend &middot; rock &middot; build &middot; killed</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>People &amp; Naked &amp; Toxic</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">112 mentions</div>
+          <p class="keywords">people &middot; naked &middot; toxic &middot; community &middot; server &middot; black</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Spawn &amp; Beach &amp; Farming</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">60 mentions</div>
+          <p class="keywords">spawn &middot; beach &middot; farming &middot; die &middot; slurs &middot; minutes</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Friends &amp; Solo &amp; Wipe</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">59 mentions</div>
+          <p class="keywords">friends &middot; solo &middot; wipe &middot; clan &middot; spent &middot; alone</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Life &amp; Ruins</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">51 mentions</div>
+          <p class="keywords">life &middot; ruins</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Raided &amp; Offline &amp; Entire</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">45 mentions</div>
+          <p class="keywords">raided &middot; offline &middot; entire &middot; grind &middot; lose &middot; outside</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Banned &amp; Ban &amp; Facepunch</h3>
+            <span class="badge" style="background:#fdecea;color:#a4302a;border:1px solid #a4302a">negative</span>
+          </div>
+          <div class="mention-count">36 mentions</div>
+          <p class="keywords">banned &middot; ban &middot; facepunch &middot; steam &middot; money &middot; happen</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Buy &amp; Refund</h3>
+            <span class="badge" style="background:#fff6e5;color:#8a5a00;border:1px solid #8a5a00">mixed</span>
+          </div>
+          <div class="mention-count">35 mentions</div>
+          <p class="keywords">buy &middot; refund</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Survival &amp; Fresh &amp; Craft</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">35 mentions</div>
+          <p class="keywords">survival &middot; fresh &middot; craft &middot; world &middot; pvp &middot; door</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Load &amp; Screen &amp; Crashes</h3>
+            <span class="badge" style="background:#fff6e5;color:#8a5a00;border:1px solid #8a5a00">mixed</span>
+          </div>
+          <div class="mention-count">34 mentions</div>
+          <p class="keywords">load &middot; screen &middot; crashes &middot; wood &middot; place &middot; finally</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Enjoy &amp; Perfect &amp; Learn</h3>
+            <span class="badge" style="background:#eafaf1;color:#1e7e4a;border:1px solid #1e7e4a">positive</span>
+          </div>
+          <div class="mention-count">34 mentions</div>
+          <p class="keywords">enjoy &middot; perfect &middot; learn &middot; already &middot; since &middot; system</p>
+        </div>
+        
+        <div class="card theme-card">
+          <div class="card-header">
+            <h3>Updates &amp; Making &amp; Less</h3>
+            <span class="badge" style="background:#fff6e5;color:#8a5a00;border:1px solid #8a5a00">mixed</span>
+          </div>
+          <div class="mention-count">31 mentions</div>
+          <p class="keywords">updates &middot; making &middot; less &middot; cheaters &middot; fix &middot; team</p>
+        </div>
+        </div>
+  </section>
+
+  <section class="block">
+    <h2>Real Player Quotes</h2>
+    <div class="quote-grid">
+        <div class="card quote-card">
+          <blockquote>&ldquo;Join a 600/600 pop 2x server exactly 14 hours after wipe.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232208163 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-06 &middot; theme: Hours &amp; Base &amp; Spend</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Nature, trees, vast distances, animals, ruins, and...people.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232393727 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-09 &middot; theme: People &amp; Naked &amp; Toxic</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Spawn on the beach.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232208163 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-06 &middot; theme: Spawn &amp; Beach &amp; Farming</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;It can evoke every emotion you can feel, both mentally and physically, but the memories I’ve made playing it with friends—that alone makes everything worth it.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232581549 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-11 &middot; theme: Friends &amp; Solo &amp; Wipe</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Nature, trees, vast distances, animals, ruins, and...people.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232393727 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-09 &middot; theme: Life &amp; Ruins</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Place your sleeping bag directly outside.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232208163 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-06 &middot; theme: Raided &amp; Offline &amp; Entire</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Got permanently EAC banned out of nowhere.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232564452 &middot; <span class="rec-no">Not Recommended</span> &middot; 2026-08-11 &middot; theme: Banned &amp; Ban &amp; Facepunch</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Do not buy this game you spend a large percentage of your time looking at a loading screen and then when you try to refund it to steam will say you spent way too long on the game so buying this game is Just paying for a expensive loading screen that never ends&rdquo;</blockquote>
+          <div class="quote-meta">Review 232385958 &middot; <span class="rec-no">Not Recommended</span> &middot; 2026-08-08 &middot; theme: Buy &amp; Refund</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;One of the best survival games&rdquo;</blockquote>
+          <div class="quote-meta">Review 232603811 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-11 &middot; theme: Survival &amp; Fresh &amp; Craft</div>
+        </div>
+        
+        <div class="card quote-card">
+          <blockquote>&ldquo;Finally load in.&rdquo;</blockquote>
+          <div class="quote-meta">Review 232208163 &middot; <span class="rec-yes">Recommended</span> &middot; 2026-08-06 &middot; theme: Load &amp; Screen &amp; Crashes</div>
+        </div>
+        </div>
+  </section>
+
+  <footer class="page-footer">
+    Generated from 1,000 real Steam reviews and 33 real marketing claims.
+    This file is self-contained and works fully offline.
+  </footer>
+</div>
+</body>
+</html>
