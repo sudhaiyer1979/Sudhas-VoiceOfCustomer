@@ -1,0 +1,333 @@
+{
+  "game_name": "Rust",
+  "themes": [
+    {
+      "theme_id": "T001",
+      "theme": "Hours & Base & Spend",
+      "sentiment": "positive",
+      "mention_count": 118,
+      "keywords": [
+        "hours",
+        "base",
+        "spend",
+        "rock",
+        "build",
+        "killed"
+      ],
+      "example_review_ids": [
+        "232208163",
+        "232388889",
+        "232633601",
+        "232686756",
+        "232300785"
+      ],
+      "quotes": [
+        "Join a 600/600 pop 2x server exactly 14 hours after wipe.",
+        "I shouldn't have to spend 10 hours to build a base, just for it to be torn down in 15 seconds by no-lifes who have rocket launchers 4 hours after wipe, when I don't even have enough cloth to make clothes or low grade fuel to make a furnace.",
+        "You spend 6 hours farming wood, stone, sulfur, and whatever other garbage the forest demands from you, build a beautiful little base, organize your boxes, get a few guns, and finally think, “Wow, I’m actually doing pretty well.”",
+        "Spawn with a **rock**.",
+        "Spend 5 minutes on the loading screen."
+      ]
+    },
+    {
+      "theme_id": "T002",
+      "theme": "People & Naked & Toxic",
+      "sentiment": "positive",
+      "mention_count": 112,
+      "keywords": [
+        "people",
+        "naked",
+        "toxic",
+        "community",
+        "server",
+        "black"
+      ],
+      "example_review_ids": [
+        "232393727",
+        "232388889",
+        "232464174",
+        "232314214",
+        "232493477"
+      ],
+      "quotes": [
+        "Nature, trees, vast distances, animals, ruins, and...people.",
+        "One of the most toxic games on the internet, most toxic I've ever played.",
+        "Community is full of annoying players who dont stop crying in chat as well as the absolute worst PvPers in any game.",
+        "Game is super fun, contrary to the popular belief of this game's community being \"toxic\" I actually found very fun people.",
+        "So many hours poured into this game to build a base just for it to get server wiped every week."
+      ]
+    },
+    {
+      "theme_id": "T003",
+      "theme": "Spawn & Beach & Farming",
+      "sentiment": "positive",
+      "mention_count": 60,
+      "keywords": [
+        "spawn",
+        "beach",
+        "farming",
+        "die",
+        "slurs",
+        "minutes"
+      ],
+      "example_review_ids": [
+        "232208163",
+        "232388889",
+        "232300785",
+        "232686756",
+        "232233292"
+      ],
+      "quotes": [
+        "Spawn on the beach.",
+        "And that wouldn't even be that bad if every time you die you didn't get reset to one of like maybe 5 spawn points that are all in the same place so crossing the map to get back to your base when you are on bed timer (if you even found enough cloth to put a bed down by the time",
+        "Spend 5 minutes on the loading screen.",
+        "* Good PC: **2 minutes**",
+        "spawn in, get enslaved bye Russians and forced to work, die, spawn in, go inland, get killed by a bear, spawn on beach again, spend hours grinding to put up a base, get offline raided, repeat, i would not recommend this game unless you are mentally well."
+      ]
+    },
+    {
+      "theme_id": "T004",
+      "theme": "Friends & Solo & Wipe",
+      "sentiment": "positive",
+      "mention_count": 59,
+      "keywords": [
+        "friends",
+        "solo",
+        "wipe",
+        "clan",
+        "spent",
+        "alone"
+      ],
+      "example_review_ids": [
+        "232581549",
+        "232208163",
+        "232388889",
+        "232189248",
+        "232608087"
+      ],
+      "quotes": [
+        "It can evoke every emotion you can feel, both mentally and physically, but the memories I’ve made playing it with friends—that alone makes everything worth it.",
+        "Join a 600/600 pop 2x server exactly 14 hours after wipe.",
+        "I shouldn't have to spend 10 hours to build a base, just for it to be torn down in 15 seconds by no-lifes who have rocket launchers 4 hours after wipe, when I don't even have enough cloth to make clothes or low grade fuel to make a furnace.",
+        "Eventualy after many wipes of failing.",
+        "Absolutely fantastic, for anyone, wether you're trying to find new friends to play with, solo against massive clans, or even be one of those massive clans, rust is the game you want."
+      ]
+    },
+    {
+      "theme_id": "T005",
+      "theme": "Life & Ruins",
+      "sentiment": "positive",
+      "mention_count": 51,
+      "keywords": [
+        "life",
+        "ruins"
+      ],
+      "example_review_ids": [
+        "232393727",
+        "232477775",
+        "232191164",
+        "232405761",
+        "232206937"
+      ],
+      "quotes": [
+        "Nature, trees, vast distances, animals, ruins, and...people.",
+        "Every time I boot up this game I know what's going to happen all I do is get smoked by people with 10000 hours raided and have the worst time of my life.",
+        "this game has honestly ruined my life, i have many words for this game that may show how i feel, such as, hatred, sadness, guilt, rage, and happiness now happiness?",
+        "This game is so bad it's fun and ruined my life 10/10 would rec :)",
+        "ruined my life."
+      ]
+    },
+    {
+      "theme_id": "T006",
+      "theme": "Raided & Offline & Entire",
+      "sentiment": "positive",
+      "mention_count": 45,
+      "keywords": [
+        "raided",
+        "offline",
+        "entire",
+        "grind",
+        "lose",
+        "outside"
+      ],
+      "example_review_ids": [
+        "232208163",
+        "232633601",
+        "232477775",
+        "232489305",
+        "232600192"
+      ],
+      "quotes": [
+        "Place your sleeping bag directly outside.",
+        "Then a naked man named “xX_ThroatGoat420_Xx” appears outside your front door with a rock and somehow ruins your entire evening.",
+        "Imagine hell was put into a game where you spend all day grinding just for it to be lost by someone who has no job and no future career other than ruining your day.",
+        "The roleplay and inter-group dynamics outside of combat are non-existent on a solo or random encounter level.",
+        "There’s nothing better than spending hours making a base just for someone to blow it up while you’re offline."
+      ]
+    },
+    {
+      "theme_id": "T007",
+      "theme": "Banned & Ban & Facepunch",
+      "sentiment": "negative",
+      "mention_count": 36,
+      "keywords": [
+        "banned",
+        "ban",
+        "facepunch",
+        "steam",
+        "money",
+        "happen"
+      ],
+      "example_review_ids": [
+        "232564452",
+        "232289195",
+        "232526980",
+        "232393727",
+        "232324748"
+      ],
+      "quotes": [
+        "Got permanently EAC banned out of nowhere.",
+        "fun to play but hackers love to hack your steam account and get you banned and facepunch blames us for it and wont un ban.",
+        "One of my favourite games so far but, i got permanently banned in facepunch servers for jokingly telling my friend to kill themselves, which i mean i guess it's fair but it's so ♥♥♥♥♥♥♥ annoying it's a perma-ban for a joke (This is my best guess since they don't even give",
+        "A friend, DayZ-exploring, a flashing Steam store page, who knows.",
+        "But facepunch has done something a bit more than just cosmetic skins for money like all the others.."
+      ]
+    },
+    {
+      "theme_id": "T008",
+      "theme": "Buy & Refund",
+      "sentiment": "mixed",
+      "mention_count": 35,
+      "keywords": [
+        "buy",
+        "refund"
+      ],
+      "example_review_ids": [
+        "232385958",
+        "232202336",
+        "232189324",
+        "232388889",
+        "232598653"
+      ],
+      "quotes": [
+        "Do not buy this game you spend a large percentage of your time looking at a loading screen and then when you try to refund it to steam will say you spent way too long on the game so buying this game is Just paying for a expensive loading screen that never ends",
+        "WHY TF DID I JUST BUY THE GAME?",
+        "This is a terrible game dont buy it i worn you its so bad your gonna buy it and regret it and refund it dknt waste money",
+        "Thankfully I was gifted this game so I didn't spend my own money, but I couldn't even refund it for my friend because it took longer than 2 hours just to find a decent spot and get enough farm to make a 1x1 shack where we wanted to put our base.",
+        "at the time of purchase I thought it was like ARK and didn't manage to refund this crap cause I thought I could change my character later when I am less busy, so ♥♥♥♥ this with all my heart."
+      ]
+    },
+    {
+      "theme_id": "T009",
+      "theme": "Survival & Fresh & Craft",
+      "sentiment": "positive",
+      "mention_count": 35,
+      "keywords": [
+        "survival",
+        "fresh",
+        "craft",
+        "world",
+        "pvp",
+        "door"
+      ],
+      "example_review_ids": [
+        "232603811",
+        "232645899",
+        "232208163",
+        "232633601",
+        "232464174"
+      ],
+      "quotes": [
+        "One of the best survival games",
+        "Rust is a brutally unforgiving survival game that tests your patience, strategy, and social skills like no other.",
+        "One wooden door.",
+        "Then a naked man named “xX_ThroatGoat420_Xx” appears outside your front door with a rock and somehow ruins your entire evening.",
+        "Community is full of annoying players who dont stop crying in chat as well as the absolute worst PvPers in any game."
+      ]
+    },
+    {
+      "theme_id": "T010",
+      "theme": "Load & Screen & Crashes",
+      "sentiment": "mixed",
+      "mention_count": 34,
+      "keywords": [
+        "load",
+        "screen",
+        "crashes",
+        "wood",
+        "place",
+        "finally"
+      ],
+      "example_review_ids": [
+        "232208163",
+        "232300785",
+        "232686756",
+        "232382581",
+        "232393727"
+      ],
+      "quotes": [
+        "Finally load in.",
+        "Spend 5 minutes on the loading screen.",
+        "Load into Rust",
+        "I loaded up in the beach naked and started getting wood with my rock in my inventory i made a 2 by 1 base and got raided the same day game is fun wipes last 30 days very cool and fun and painful grind.",
+        "But once I installed it, and loaded it up, I had found a new, exciting video game."
+      ]
+    },
+    {
+      "theme_id": "T011",
+      "theme": "Enjoy & Perfect & Learn",
+      "sentiment": "positive",
+      "mention_count": 34,
+      "keywords": [
+        "enjoy",
+        "perfect",
+        "learn",
+        "already",
+        "since",
+        "system"
+      ],
+      "example_review_ids": [
+        "232393727",
+        "232189248",
+        "232281378",
+        "232524999",
+        "232645899"
+      ],
+      "quotes": [
+        "Once I loaded into the world, an island of apparent great size, I enjoyed the experience from the start.",
+        "The community of this game is Extremely unhinged and toxic, After about 500 hours playing with mostly just frustrations, confusions and exhaustion from learning how the game functions and what to expect from other player's behaviours.",
+        "The moment you spawn in with nothing but a rock, the player base already armed to the teeth treats you like target practice.",
+        "I have played Rust Console since it was released and have enjoyed it but switching to pc and learning the game anew has been refreshing!",
+        "The crafting system is deep, the building mechanics are satisfying, and every wipe brings a fresh, chaotic start full of possibility."
+      ]
+    },
+    {
+      "theme_id": "T012",
+      "theme": "Updates & Making & Less",
+      "sentiment": "mixed",
+      "mention_count": 31,
+      "keywords": [
+        "updates",
+        "making",
+        "less",
+        "cheaters",
+        "fix",
+        "team"
+      ],
+      "example_review_ids": [
+        "232393727",
+        "232288705",
+        "232387659",
+        "232506960",
+        "232317466"
+      ],
+      "quotes": [
+        "Or do you try to find some team to take you in?",
+        "Honestly its crazy how many high hour cheaters there are, Game really needs in game admins gaming on EVERY server just insane amount of cheating, its no wonder so many legit players give in and start cheating.",
+        "man the game is good and everything get good updates but i hate zergs the big teams as a solo way hard to much and this game can make u sleep less shower less go out less or maybe dont go out or u get offline raided like imagine u with u friends out and your phone send u u are",
+        "lazy bum devs that focus on making money from skins rather then actually fixing and polishing the game",
+        "to many cheaters terrible fps ♥♥♥♥♥♥♥ updates"
+      ]
+    }
+  ]
+}
