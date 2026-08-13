@@ -1,0 +1,138 @@
+{
+  "game_name": "Rust",
+  "source_url": "https://store.steampowered.com/app/252490",
+  "claims": [
+    {
+      "claim_id": "M001",
+      "text": "The only aim in Rust is to survive."
+    },
+    {
+      "claim_id": "M002",
+      "text": "Everything wants you to die - the island’s wildlife, other inhabitants, the environment, and other survivors."
+    },
+    {
+      "claim_id": "M003",
+      "text": "Do whatever it takes to last another night."
+    },
+    {
+      "claim_id": "M004",
+      "text": "Rust now enters its 13th year of continued expansion and has had over 395 content updates, with a guaranteed content patch every month."
+    },
+    {
+      "claim_id": "M005",
+      "text": "These include regular balance fixes, improvements to AI, and graphics, as well as updates to environments and the frequent addition of content such as new maps, more weapons, extra vehicles, and a plethora of utility items."
+    },
+    {
+      "claim_id": "M006",
+      "text": "Keep an eye out for regular seasonal events, as there’s always something interesting or dangerous (or both) happening on the island."
+    },
+    {
+      "claim_id": "M007",
+      "text": "Updates to the game include:"
+    },
+    {
+      "claim_id": "M008",
+      "text": "Procedurally generated worlds with community map editor support"
+    },
+    {
+      "claim_id": "M009",
+      "text": "Host your own servers and with server-side modding support"
+    },
+    {
+      "claim_id": "M010",
+      "text": "Transportation: horses, modular cars, hot air balloons, helicopters, bikes, trains, boats, and more"
+    },
+    {
+      "claim_id": "M011",
+      "text": "Base Building and Raiding"
+    },
+    {
+      "claim_id": "M012",
+      "text": "New factions, enemies, and wildlife"
+    },
+    {
+      "claim_id": "M013",
+      "text": "Advanced underwater areas to discover"
+    },
+    {
+      "claim_id": "M014",
+      "text": "Complex electrical, farming, and automation systems"
+    },
+    {
+      "claim_id": "M015",
+      "text": "New monuments, terrain, and areas to explore"
+    },
+    {
+      "claim_id": "M016",
+      "text": "Large overground and underground train networks"
+    },
+    {
+      "claim_id": "M017",
+      "text": "Musical instruments and the ability to perform to players"
+    },
+    {
+      "claim_id": "M018",
+      "text": "Massive recent graphics upgrade and environment overhaul"
+    },
+    {
+      "claim_id": "M019",
+      "text": "Primitive game mode, siege weapons, and vehicles added"
+    },
+    {
+      "claim_id": "M020",
+      "text": "New Jungle biome with more wild animals, missions, and monuments"
+    },
+    {
+      "claim_id": "M021",
+      "text": "2026 New addition: Modular boats, the deep sea, tropical islands, floating cities, and more!"
+    },
+    {
+      "claim_id": "M022",
+      "text": "And much more to come throughout the year, including an update to the player’s character model, an apartment complex monument, more animals, and upgrades to the caves and tunnels !"
+    },
+    {
+      "claim_id": "M023",
+      "text": "You wake naked on a mysterious island, armed only with a rock and a torch."
+    },
+    {
+      "claim_id": "M024",
+      "text": "You’ll need to brave environmental dangers and deficiencies (from heat and cold to thirst and starvation), build a shelter, eat (or be eaten), and scavenge materials."
+    },
+    {
+      "claim_id": "M025",
+      "text": "Explore the island and its abandoned settlements, mysterious monuments, and the factions that occupy them."
+    },
+    {
+      "claim_id": "M026",
+      "text": "But, above all, watch out for other survivors…"
+    },
+    {
+      "claim_id": "M027",
+      "text": "Design and build bases to store your loot, defend your territory, and control the resources of the island."
+    },
+    {
+      "claim_id": "M028",
+      "text": "Research the tech tree, grow farms, command electricity, and commandeer various forms of transportation to traverse the island."
+    },
+    {
+      "claim_id": "M029",
+      "text": "Whatever it takes to get ahead."
+    },
+    {
+      "claim_id": "M030",
+      "text": "There are no rules in Rust but the ones you make for yourself."
+    },
+    {
+      "claim_id": "M031",
+      "text": "Craft tools, armour, and weapons to defend yourself."
+    },
+    {
+      "claim_id": "M032",
+      "text": "Cooperate with friends, make alliances, and build a settlement together."
+    },
+    {
+      "claim_id": "M033",
+      "text": "Explore the island and what’s happening in it, trade with other players, or prey on them, raiding their bases and taking their hard-won goods."
+    }
+  ]
+}
