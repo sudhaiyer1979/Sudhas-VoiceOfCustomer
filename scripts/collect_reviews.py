@@ -3,8 +3,9 @@
 
 Prompts for a Steam store URL and a game name, extracts the App ID from
 the URL, then paginates Steam's public appreviews endpoint
-(https://store.steampowered.com/appreviews/{appid}) until either 1000
-reviews are collected or Steam has no more reviews to return.
+(https://store.steampowered.com/appreviews/{appid}), requesting English
+reviews only, until either 1000 reviews are collected or Steam has no
+more reviews to return.
 
 Reviews are written to data/reviews.json as an object:
     {
@@ -62,7 +63,7 @@ def fetch_page(appid: str, cursor: str):
     transient failures (e.g. rate limiting) with backoff.
     """
     params = (
-        f"?json=1&filter=recent&language=all&review_type=all"
+        f"?json=1&filter=recent&language=english&review_type=all"
         f"&purchase_type=all&num_per_page={REVIEWS_PER_PAGE}"
         f"&cursor={quote(cursor)}"
     )
@@ -167,7 +168,7 @@ def main():
 
     print(f"\nGame: {game_name}")
     print(f"Steam App ID: {appid}")
-    print(f"Collecting up to {MAX_REVIEWS} reviews...\n")
+    print(f"Collecting up to {MAX_REVIEWS} English reviews...\n")
 
     try:
         reviews = collect_reviews(appid, MAX_REVIEWS)
