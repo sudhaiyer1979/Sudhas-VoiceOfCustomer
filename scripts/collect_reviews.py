@@ -6,8 +6,16 @@ the URL, then paginates Steam's public appreviews endpoint
 (https://store.steampowered.com/appreviews/{appid}) until either 1000
 reviews are collected or Steam has no more reviews to return.
 
-Reviews are written to data/reviews.json as a JSON array of objects:
-    {"review_text": str, "recommended": bool, "date": "YYYY-MM-DD"}
+Reviews are written to data/reviews.json as an object:
+    {
+      "game_name": str,
+      "source_url": str,
+      "app_id": str,
+      "review_count": int,
+      "reviews": [
+        {"review_id": str, "text": str, "recommended": bool, "date": "YYYY-MM-DD"}
+      ]
+    }
 
 No mock or fabricated data is ever substituted. If Steam cannot be
 reached, or returns an error, the script prints the exact error and
@@ -124,8 +132,10 @@ def collect_reviews(appid: str, max_reviews: int = MAX_REVIEWS):
                 if timestamp is not None
                 else None
             )
+            review_id = r.get("recommendationid") or str(len(reviews) + 1)
             reviews.append({
-                "review_text": r.get("review", ""),
+                "review_id": str(review_id),
+                "text": r.get("review", ""),
                 "recommended": bool(r.get("voted_up")),
                 "date": date_str,
             })
@@ -170,9 +180,17 @@ def main():
               file=sys.stderr)
         sys.exit(1)
 
+    output = {
+        "game_name": game_name,
+        "source_url": steam_url,
+        "app_id": appid,
+        "review_count": len(reviews),
+        "reviews": reviews,
+    }
+
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(reviews, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"\nSaved {len(reviews)} real reviews to {OUTPUT_PATH}")
 
